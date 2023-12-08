@@ -16,7 +16,7 @@ def primes(number_of_primes):
 
     return list
 
-# Example usage:
+
 try:
     result = primes(10)
     print(result)
