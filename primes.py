@@ -3,22 +3,19 @@
 
 def primes(number_of_primes):
     if number_of_primes <= 0:
-        raise ValueError("must be a positive number")
+        print("Error: must be a positive number")
+        return []
 
-    prime_list = []
+    list = []
     x = 2
 
-    while len(prime_list) < number_of_primes:
-        is_prime = all(x % prime != 0 for prime in prime_list)
-        if is_prime:
-            prime_list.append(x)
+    while len(list) < number_of_primes:
+        if all(x % prime != 0 for prime in list):
+            list.append(x)
         x += 1
 
-    return prime_list
+    return list
 
 # Example usage:
-try:
-    result = primes(10)
-    print(result)
-except ValueError as e:
-    print(f"Error: {e}")
+result = primes(10)
+print(result)
